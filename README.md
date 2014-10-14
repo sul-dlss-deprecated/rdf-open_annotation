@@ -22,13 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-# @example Using these RDF vocabularies
-# include RDF
-# include rdf-open_annotation
-#
-# RDF::OpenAnnotation.Annotation #=> RDF::URI("http://www.w3.org/ns/oa#Annotation")
-# RDF::OpenAnnotation.hasBody #=> RDF::URI("http://www.w3.org/ns/oa#hasBody")
-# RDF::Content.chars #=> RDF::URI("http://www.w3.org/2011/content#chars")
+    include RDF
+    include rdf-open_annotation
+    
+    RDF::OpenAnnotation.Annotation #=> RDF::URI("http://www.w3.org/ns/oa#Annotation")
+    RDF::OpenAnnotation.hasBody #=> RDF::URI("http://www.w3.org/ns/oa#hasBody")
+    RDF::Content.chars #=> RDF::URI("http://www.w3.org/2011/content#chars")
 
 ## Contributing
 
