@@ -1,6 +1,6 @@
 # rdf-open_annotation
 
-[![Gem Version](https://badge.fury.io/rb/rdf-open_annotation.svg)](http://badge.fury.io/rb/rdf-open_annotation)
+[![Dependency Status](https://gemnasium.com/sul-dlss/rdf-open_annotation.svg)](https://gemnasium.com/sul-dlss/rdf-open_annotation) [![Gem Version](https://badge.fury.io/rb/rdf-open_annotation.svg)](http://badge.fury.io/rb/rdf-open_annotation)
 
 Contains vocabularies to be used by RDF ruby gem https://github.com/ruby-rdf/rdf/ to simplify coding when using OpenAnnotation data.
 
@@ -22,8 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-    include RDF
-    include rdf-open_annotation
+    require 'rdf'
+    require 'rdf/open_annotation'
     
     RDF::OpenAnnotation.Annotation #=> RDF::URI("http://www.w3.org/ns/oa#Annotation")
     RDF::OpenAnnotation.hasBody #=> RDF::URI("http://www.w3.org/ns/oa#hasBody")
@@ -31,7 +31,7 @@ Or install it yourself as:
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/open_annotation/fork )
+1. Fork it ( https://github.com/[my-github-username]/rdf-open_annotation/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
