@@ -1,6 +1,6 @@
 # OpenAnnotation
 
-TODO: Write a gem description
+Contains vocabularies to be used by RDF ruby gem https://github.com/ruby-rdf/rdf/ to simplify coding when using OpenAnnotation data.
 
 ## Installation
 
@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+# @example Using these RDF vocabularies
+# include RDF
+# include rdf-open_annotation
+#
+# RDF::OpenAnnotation.Annotation #=> RDF::URI("http://www.w3.org/ns/oa#Annotation")
+# RDF::OpenAnnotation.hasBody #=> RDF::URI("http://www.w3.org/ns/oa#hasBody")
+# RDF::Content.chars #=> RDF::URI("http://www.w3.org/2011/content#chars")
 
 ## Contributing
 

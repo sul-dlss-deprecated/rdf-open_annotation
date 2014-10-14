@@ -6,9 +6,9 @@ require 'rdf/open_annotation/version'
 Gem::Specification.new do |spec|
   spec.name          = "rdf-open_annotation"
   spec.version       = RDF::OpenAnnotation::VERSION
-  spec.authors       = ["Chris Beer"]
-  spec.email         = ["cabeer@stanford.edu"]
-  spec.summary       = %q{Open Annotation vocabulary for RDF.rb}
+  spec.authors       = ["Chris Beer", "Naomi Dushay"]
+  spec.email         = ["cabeer@stanford.edu", "ndushay@stanford.edu"]
+  spec.summary       = %q{Open Annotation vocabularies for RDF.rb}
   spec.homepage      = ""
   spec.license       = "Apache 2"
 
