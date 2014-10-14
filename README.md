@@ -1,4 +1,6 @@
-# OpenAnnotation
+# rdf-open_annotation
+
+[![Gem Version](https://badge.fury.io/rb/rdf-open_annotation.svg)](http://badge.fury.io/rb/rdf-open_annotation)
 
 Contains vocabularies to be used by RDF ruby gem https://github.com/ruby-rdf/rdf/ to simplify coding when using OpenAnnotation data.
 
