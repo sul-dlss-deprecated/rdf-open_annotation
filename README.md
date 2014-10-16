@@ -22,12 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'rdf'
     require 'rdf/open_annotation'
     
     RDF::OpenAnnotation.Annotation #=> RDF::URI("http://www.w3.org/ns/oa#Annotation")
     RDF::OpenAnnotation.hasBody #=> RDF::URI("http://www.w3.org/ns/oa#hasBody")
     RDF::Content.chars #=> RDF::URI("http://www.w3.org/2011/content#chars")
+    RDF::DCMIType.Text #=> RDF::URI("http://purl.org/dc/dcmitype/Text")
 
 ## Contributing
 
