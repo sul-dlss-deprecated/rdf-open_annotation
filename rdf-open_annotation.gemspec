@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = RDF::OpenAnnotation::VERSION
   spec.authors       = ["Chris Beer", "Naomi Dushay"]
   spec.email         = ["cabeer@stanford.edu", "ndushay@stanford.edu"]
-  spec.summary       = %q{Open Annotation vocabularies for RDF.rb}
-  spec.homepage      = ""
+  spec.summary       = %q{This gem deprecated in favor of rdf-vocab}
+  spec.homepage      = "https://github.com/sul-dlss/rdf-open_annotation"
   spec.license       = "Apache 2"
 
   spec.files         = `git ls-files -z`.split("\x0")
