@@ -2,9 +2,16 @@
 # This file generated automatically using vocab-fetch from http://purl.org/dc/dcmitype/
 require 'rdf'
 module RDF
+  # deprecate DCMIType
+  def self.const_missing(const_name)
+    super unless const_name == :DCMIType
+    warn "DEPRECATION WARNING: the class RDF::DCMIType is deprecated. Use RDF::Vocab::DCMIType from https://github.com/ruby-rdf/rdf-vocab instead."
+    DCMITypeDeprecated
+  end
+
   # @deprecated:  this class is deprecated in favor of RDF::Vocab::DCMIType from
   #    rdf-vocab gem
-  class DCMIType < RDF::StrictVocabulary("http://purl.org/dc/dcmitype/")
+  class DCMITypeDeprecated < RDF::StrictVocabulary("http://purl.org/dc/dcmitype/")
 
     # Class definitions
     term :Collection,

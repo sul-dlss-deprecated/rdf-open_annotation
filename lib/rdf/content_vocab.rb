@@ -2,9 +2,17 @@
 # This file generated automatically using vocab-fetch from http://www.w3.org/2011/content#
 require 'rdf'
 module RDF
+
+  # deprecate Content
+  def self.const_missing(const_name)
+    super unless const_name == :Content
+    warn "DEPRECATION WARNING: the class RDF::Content is deprecated. Use RDF::Vocab::CNT from https://github.com/ruby-rdf/rdf-vocab instead."
+    ContentDeprecated
+  end
+
   # @deprecated:  this class is deprecated in favor of RDF::Vocab::CNT from
   #    rdf-vocab gem
-  class Content < RDF::StrictVocabulary("http://www.w3.org/2011/content#")
+  class ContentDeprecated < RDF::StrictVocabulary("http://www.w3.org/2011/content#")
 
     # Class definitions
     term :Content,

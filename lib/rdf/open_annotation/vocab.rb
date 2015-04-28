@@ -2,9 +2,16 @@
 # This file generated automatically using vocab-fetch from http://www.w3.org/ns/oa#
 require 'rdf'
 module RDF
+  # deprecate OpenAnnotation
+  def self.const_missing(const_name)
+    super unless const_name == :OpenAnnotation
+    warn "DEPRECATION WARNING: the class RDF::OpenAnnotation is deprecated. Use RDF::Vocab::OA from https://github.com/ruby-rdf/rdf-vocab instead."
+    OpenAnnotationDeprecated
+  end
+
   # @deprecated:  this class is deprecated in favor of RDF::Vocab::OA from
   #    rdf-vocab gem
-  class OpenAnnotation < RDF::StrictVocabulary("http://www.w3.org/ns/oa#")
+  class OpenAnnotationDeprecated < RDF::StrictVocabulary("http://www.w3.org/ns/oa#")
 
     # Class definitions
     term :Annotation,
