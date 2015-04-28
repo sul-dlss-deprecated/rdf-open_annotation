@@ -2,6 +2,8 @@
 # This file generated automatically using vocab-fetch from http://www.w3.org/2011/content#
 require 'rdf'
 module RDF
+  # @deprecated:  this class is deprecated in favor of RDF::Vocab::CNT from
+  #    rdf-vocab gem
   class Content < RDF::StrictVocabulary("http://www.w3.org/2011/content#")
 
     # Class definitions

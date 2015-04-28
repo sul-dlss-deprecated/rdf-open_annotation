@@ -2,6 +2,8 @@
 # This file generated automatically using vocab-fetch from http://purl.org/dc/dcmitype/
 require 'rdf'
 module RDF
+  # @deprecated:  this class is deprecated in favor of RDF::Vocab::DCMIType from
+  #    rdf-vocab gem
   class DCMIType < RDF::StrictVocabulary("http://purl.org/dc/dcmitype/")
 
     # Class definitions

@@ -2,20 +2,22 @@
 # This file generated automatically using vocab-fetch from http://www.w3.org/ns/oa#
 require 'rdf'
 module RDF
+  # @deprecated:  this class is deprecated in favor of RDF::Vocab::OA from
+  #    rdf-vocab gem
   class OpenAnnotation < RDF::StrictVocabulary("http://www.w3.org/ns/oa#")
 
     # Class definitions
     term :Annotation,
-      comment: %(Typically an Annotation has a single Body \(oa:hasBody\), which is the comment or other descriptive resource, and a single Target \(oa:hasTarget\) that the Body is somehow "about". The Body provides the information which is annotating the Target. 
+      comment: %(Typically an Annotation has a single Body \(oa:hasBody\), which is the comment or other descriptive resource, and a single Target \(oa:hasTarget\) that the Body is somehow "about". The Body provides the information which is annotating the Target.
 
 This "aboutness" may be further clarified or extended to notions such as classifying or identifying with oa:motivatedBy.).freeze,
       label: "Annotation".freeze,
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:Class".freeze
     term :Choice,
-      comment: %(A multiplicity construct that conveys to a consuming application that it should select one of the constituent resources to display to the user, and not render/use all of them. 
+      comment: %(A multiplicity construct that conveys to a consuming application that it should select one of the constituent resources to display to the user, and not render/use all of them.
 
-oa:Choice can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships, 
+oa:Choice can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships,
 
 There MUST be 1 or more oa:item relationships for each oa:Choice.
 
@@ -25,9 +27,9 @@ There SHOULD be exactly 1 default relationship for each Choice.).freeze,
       subClassOf: "rdf:Alt".freeze,
       type: "owl:Class".freeze
     term :Composite,
-      comment: %(A multiplicity construct that conveys to a consuming application that all of the constituent resources are required for the Annotation to be correctly interpreted. 
+      comment: %(A multiplicity construct that conveys to a consuming application that all of the constituent resources are required for the Annotation to be correctly interpreted.
 
-oa:Composite can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships, 
+oa:Composite can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships,
 
 There MUST be 2 or more oa:item relationships for each oa:Composite.).freeze,
       label: "Composite".freeze,
@@ -77,9 +79,9 @@ There MUST be exactly 1 rdf:value property per HttpRequestState, containing HTTP
       subClassOf: "http://www.w3.org/ns/oa#State".freeze,
       type: "owl:Class".freeze
     term :List,
-      comment: %(A multiplicity construct that conveys to a consuming application that all of the constituent resources are required for the Annotation to be correctly interpreted, and in a particular order. 
+      comment: %(A multiplicity construct that conveys to a consuming application that all of the constituent resources are required for the Annotation to be correctly interpreted, and in a particular order.
 
-oa:List can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships, 
+oa:List can be used as the object of the object of the oa:hasBody, oa:hasTarget, oa:hasSelector, oa:hasState, oa:styledBy and oa:hasScope relationships,
 
 There MUST be 2 or more oa:item relationships for each oa:List, with their order defined using the rdf:List construct of rdf:first/rdf:rest/rdf:nil.
 
@@ -97,7 +99,7 @@ Each Annotation SHOULD have at least one oa:motivatedBy relationship to an insta
       subClassOf: "skos:Concept".freeze,
       type: "owl:Class".freeze
     term :Selector,
-      comment: %(A resource which describes the segment of interest in a representation of a Source resource, indicated with oa:hasSelector from the Specific Resource. 
+      comment: %(A resource which describes the segment of interest in a representation of a Source resource, indicated with oa:hasSelector from the Specific Resource.
 
 This class is not used directly in Annotations, only its subclasses are.
 
@@ -116,7 +118,7 @@ It is NOT RECOMMENDED to use the URI of a document as a Semantic Tag, as it migh
       subClassOf: "http://www.w3.org/ns/oa#Tag".freeze,
       type: "owl:Class".freeze
     term :SpecificResource,
-      comment: %(A resource identifies part of another Source resource, a particular representation of a resource, a resource with styling hints for renders, or any combination of these. 
+      comment: %(A resource identifies part of another Source resource, a particular representation of a resource, a resource with styling hints for renders, or any combination of these.
 
 The Specific Resource takes the role of oa:hasBody or oa:hasTarget in an oa:Annotation instead of the Source resource.
 
@@ -144,7 +146,7 @@ The Specifier's description MAY be conveyed as an external or embedded resource 
 
 This class is not used directly in Annotations, only its subclasses are.
 
-The content of the resource provides the rendering hints about the Annotation's constituent resources. 
+The content of the resource provides the rendering hints about the Annotation's constituent resources.
 
 The Specifier's description MAY be conveyed as an external or embedded resource \(cnt:Content\), or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced.).freeze,
       label: "Style".freeze,
@@ -212,7 +214,7 @@ There MUST be at least one of oa:cachedSource or oa:when specified. If there is 
 
     # Property definitions
     property :annotatedAt,
-      comment: %(The time at which the Annotation was created. 
+      comment: %(The time at which the Annotation was created.
 
 There SHOULD be exactly 1 oa:annotatedAt property per Annotation, and MUST NOT be more than 1. The datetime MUST be expressed in the xsd:dateTime format, and SHOULD have a timezone specified.).freeze,
       domain: "http://www.w3.org/ns/oa#Annotation".freeze,
@@ -221,7 +223,7 @@ There SHOULD be exactly 1 oa:annotatedAt property per Annotation, and MUST NOT b
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:DatatypeProperty".freeze
     property :annotatedBy,
-      comment: %(The object of the relationship is a resource that identifies the agent responsible for creating the Annotation. This may be either a human or software agent. 
+      comment: %(The object of the relationship is a resource that identifies the agent responsible for creating the Annotation. This may be either a human or software agent.
 
 There SHOULD be exactly 1 oa:annotatedBy relationship per Annotation, but MAY be 0 or more than 1, as the Annotation may be anonymous, or multiple agents may have worked together on it.
 
@@ -247,7 +249,7 @@ There SHOULD be exactly 1 default relationship for each Choice.).freeze,
       subPropertyOf: "http://www.w3.org/ns/oa#item".freeze,
       type: "owl:ObjectProperty".freeze
     property :end,
-      comment: %(The end position of the segment of text or bytes. The first character/byte in the full text/stream is position 0. The character/byte indicated at position oa:end is NOT included within the selected segment. 
+      comment: %(The end position of the segment of text or bytes. The first character/byte in the full text/stream is position 0. The character/byte indicated at position oa:end is NOT included within the selected segment.
 
 See oa:DataPositionSelector and oa:oa:TextPositionSelector.).freeze,
       domain: "http://www.w3.org/ns/oa#Selector".freeze,
@@ -256,7 +258,7 @@ See oa:DataPositionSelector and oa:oa:TextPositionSelector.).freeze,
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:DatatypeProperty".freeze
     property :equivalentTo,
-      comment: %(The subject and object resources of the oa:equivalentTo relationship represent the same resource, but potentially have different metadata such as oa:serializedBy, oa:serializedAt and serialization format.  oa:equivalentTo is a symmetrical and transitive relationship; if A oa:equivalentTo B, then it is also true that B oa:equivalent A; and that if B oa:equivalentTo C, then it is also true that A oa:equivalentTo C. 
+      comment: %(The subject and object resources of the oa:equivalentTo relationship represent the same resource, but potentially have different metadata such as oa:serializedBy, oa:serializedAt and serialization format.  oa:equivalentTo is a symmetrical and transitive relationship; if A oa:equivalentTo B, then it is also true that B oa:equivalent A; and that if B oa:equivalentTo C, then it is also true that A oa:equivalentTo C.
 
 The Annotation MAY include 0 or more instances of the oa:equivalentTo relationship between copies of the Annotation or other resources, and SHOULD include as many as are available.
 
@@ -278,7 +280,7 @@ See oa:TextQuoteSelector.).freeze,
 
 The Body may be of any media type, and contain any type of content. The Body SHOULD be identified by HTTP URIs unless they are embedded within the Annotation.
 
-Embedded bodies SHOULD be instances of cnt:ContentAsText and embed their content with cnt:chars. They SHOULD declare their media type with dc:format, and MAY indicate their language using dc:language and a RFC-3066 language tag. 
+Embedded bodies SHOULD be instances of cnt:ContentAsText and embed their content with cnt:chars. They SHOULD declare their media type with dc:format, and MAY indicate their language using dc:language and a RFC-3066 language tag.
 
 There is no OA class provided for "Body" as a body might be a target of a different annotation. However, there SHOULD be 1 or more content-based classes associated with the body resources of an Annotation, and the dctypes: vocabulary is recommended for this purpose, for instance dctypes:Text to declare textual content.
 ).freeze,
@@ -297,8 +299,8 @@ There MAY be 0 or more hasScope relationships for each Specific Resource.).freez
     property :hasSelector,
       comment: %(The relationship between a oa:SpecificResource and a oa:Selector.
 
-There MUST be exactly 0 or 1 oa:hasSelector relationship associated with a 
-Specific Resource. 
+There MUST be exactly 0 or 1 oa:hasSelector relationship associated with a
+Specific Resource.
 
 If multiple Selectors are required, either to express a choice between different optional, equivalent selectors, or a chain of selectors that should all be processed, it is necessary to use oa:Choice, oa:Composite or oa:List as a selector.).freeze,
       domain: "http://www.w3.org/ns/oa#SpecificResource".freeze,
@@ -307,7 +309,7 @@ If multiple Selectors are required, either to express a choice between different
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:ObjectProperty".freeze
     property :hasSource,
-      comment: %(The relationship between a oa:SpecificResource and the resource that it is a more specific representation of. 
+      comment: %(The relationship between a oa:SpecificResource and the resource that it is a more specific representation of.
 
 There MUST be exactly 1 oa:hasSource relationship associated with a Specific Resource.).freeze,
       domain: "http://www.w3.org/ns/oa#SpecificResource".freeze,
@@ -330,7 +332,7 @@ If there are multiple State resources that must be associated with the specific 
 
 The target may be of any media type, and contain any type of content. The target SHOULD be identified by HTTP URIs unless they are embedded within the Annotation.
 
-Embedded targets SHOULD be instances of cnt:ContentAsText and embed their content with cnt:chars. They SHOULD declare their media type with dc:format, and MAY indicate their language using dc:language and a RFC-3066 language tag. 
+Embedded targets SHOULD be instances of cnt:ContentAsText and embed their content with cnt:chars. They SHOULD declare their media type with dc:format, and MAY indicate their language using dc:language and a RFC-3066 language tag.
 
 There is no OA class provided for "Target" as a target might be a body in a different annotation. However, there SHOULD be 1 or more content-based classes associated with the target resources of an Annotation, and the dctypes: vocabulary is recommended for this purpose, for instance dctypes:Text to declare textual content.).freeze,
       domain: "http://www.w3.org/ns/oa#Annotation".freeze,
@@ -363,7 +365,7 @@ See oa:TextQuoteSelector.).freeze,
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:DatatypeProperty".freeze
     property :serializedAt,
-      comment: %(The time at which the agent referenced by oa:serializedBy generated the first serialization of the Annotation, and any subsequent substantially different one. The annotation graph MUST have changed for this property to be updated, and as such represents the last modified datestamp for the Annotation. This might be used to determine if it should be re-imported into a triplestore when discovered. 
+      comment: %(The time at which the agent referenced by oa:serializedBy generated the first serialization of the Annotation, and any subsequent substantially different one. The annotation graph MUST have changed for this property to be updated, and as such represents the last modified datestamp for the Annotation. This might be used to determine if it should be re-imported into a triplestore when discovered.
 
 There MAY be exactly 1 oa:serializedAt property per Annotation, and MUST NOT be more than 1. The datetime MUST be expressed in the xsd:dateTime format, and SHOULD have a timezone specified.
 ).freeze,
@@ -373,7 +375,7 @@ There MAY be exactly 1 oa:serializedAt property per Annotation, and MUST NOT be 
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:DatatypeProperty".freeze
     property :serializedBy,
-      comment: %(The object of the relationship is the agent, likely software, responsible for generating the serialization of the Annotation's serialization. 
+      comment: %(The object of the relationship is the agent, likely software, responsible for generating the serialization of the Annotation's serialization.
 
 It is RECOMMENDED to use these and other FOAF terms to describe agents: foaf:Person, prov:SoftwareAgent, foaf:Organization, foaf:name, foaf:mbox, foaf:openid, foaf:homepage
 
@@ -384,7 +386,7 @@ There MAY be 0 or more oa:serializedBy relationships per Annotation.).freeze,
       subPropertyOf: "prov:wasAttributedTo".freeze,
       type: "owl:ObjectProperty".freeze
     property :start,
-      comment: %(The starting position of the segment of text or bytes. The first character/byte in the full text/stream is position 0. The character/byte indicated at position oa:start is included within the selected segment. 
+      comment: %(The starting position of the segment of text or bytes. The first character/byte in the full text/stream is position 0. The character/byte indicated at position oa:start is included within the selected segment.
 
 See oa:DataPositionSelector and oa:TextPositionSelector.).freeze,
       domain: "http://www.w3.org/ns/oa#Selector".freeze,
@@ -414,7 +416,7 @@ If there are multiple Style resources that must be associated with the Annotatio
       "rdfs:isDefinedBy" => %(http://www.w3.org/ns/oa#).freeze,
       type: "owl:ObjectProperty".freeze
     property :suffix,
-      comment: %(The snippet of text that occurs immediately after the text which is being selected. 
+      comment: %(The snippet of text that occurs immediately after the text which is being selected.
 
 See oa:TextQuoteSelector.).freeze,
       domain: "http://www.w3.org/ns/oa#Selector".freeze,
